@@ -1520,7 +1520,7 @@ class Net_SFTP extends Net_SSH2 {
             return $content;
         }
 
-        fclose($fp);
+        if( is_resource($fp) ) fclose($fp);
         return true;
     }
 
